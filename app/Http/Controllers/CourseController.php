@@ -62,14 +62,9 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        // return view('courses.about_us');
-        return view('courses.show');
-    }
-
-    public function showAbout($id)
-    {
-        // return view('courses.about_us');
-        return view('about_us');
+        $grade = Course::find($id);
+        return view('courses.show', compact('grade'));
+        // return 'El id de este curso es: ' . $id;
     }
 
     /**
@@ -80,7 +75,10 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        return view('courses.edit');
+        $grade = Course::find($id);
+        // return 'El id de este curso es: ' . $id;
+        // return 'La iformación que ud quiere actualizar, se vería en formato array...' . $grade;
+        return view('courses.edit', compact('grade'));
     }
 
     /**
@@ -92,7 +90,15 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $grade = Course::find($id);
+        // return $grade;
+        $grade->fill($request->except('imagen'));
+        if($request->hasFile('imagen')){
+            $grade->imagen = $request->file('imagen')->store('public/courses');
+        }
+        $grade->save();
+        // return $request;
+        return 'La información del curso se ha actualizado exitosamente';
     }
 
     /**

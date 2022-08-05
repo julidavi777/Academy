@@ -16,21 +16,22 @@
                         <h2 class="text-center mt-5">Crear Nuevo Curso</h2>
                         <br>
                         <div class="form-group">
-                            <label for="name">Nombre del curso</label>
+                            <label for="name"><b>Nombre del curso:</b></label>
                             <input id="name" class="form-control" type="text" name="name">
                         </div>
                         <div class="form-group">
-                            <label for="description">Descripción</label>
+                            <label for="description"><b>Descripción:</b></label>
                             <input id="description" class="form-control" type="text" name="description">
                         </div>
                         <div class="form-group">
-                            <label for="duration">Duración (horas)</label>
+                            <label for="duration"><b>Duración (horas):</b></label>
                             <input id="duration" class="form-control" type="text" name="duration">
                         </div>
                         <div class="form-group">
-                            <label for="imagen">Cargue la imagen del curso</label>
+                            <label for="imagen"><b>Cargue la imagen del curso:</b></label>
                             <input id="imagen" class="" type="file" name="imagen">
                         </div>
+                        <br>
                         <div class="button text-center">
                             <button class="btn btn-success" type="submit">Crear</button>
                         </div>
@@ -42,8 +43,6 @@
             </div>
         </div>
     </div>
-
-
 
 @endsection
 

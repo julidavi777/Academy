@@ -16,9 +16,11 @@
                     <img src="{{ Storage::url($training->imagen) }}" width="300" height="220" alt="">
                     <div class="card-body">
                         <h5 class="card-title"> {{$training->name}} </h5>
-                        <p class="card-text"> <b>Contenido:</b> {{$training->description}} </p>
-                        <p class="card-text"> <b>Duración:</b> {{$training->duration}} Horas</p>
-                        <a href="#" class="btn btn-primary">Ver detalle</a>
+                        {{-- <p class="card-text"> <b>Contenido:</b> {{$training->description}} </p> --}}
+                        {{-- <p class="card-text"> <b>Duración:</b> {{$training->duration}} Horas</p> --}}
+                        <div class="text-center">
+                            <a href="/courses/{{$training->id}}" class="btn btn-primary">Ver detalle</a>
+                        </div>
                     </div>
                 </div>
                 <br>

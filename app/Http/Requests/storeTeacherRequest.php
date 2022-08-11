@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class storeCourseRequest extends FormRequest
+class storeTeacherRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,13 @@ class storeCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:15',
-            'description' => 'required|max:60',
-            'duration' => 'required|size:2 ',
-            'imagen' => 'required|image'
-            // 'imagen' => 'mimetypes:video/avi,video/mpeg,video/quicktime'
+            'name' => 'required|max:45',
+            'last_name' => 'required|max:45',
+            'college_degree' => 'required|max:50',
+            'age' => 'required|size:2',
+            'contract_date' => 'nullable|date',
+            'imagen' => 'file|size:max:5120',
+            'identify_document' => 'file|sizemax::5120'
         ];
     }
 }

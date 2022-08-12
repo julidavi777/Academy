@@ -104,6 +104,9 @@ class TeacherController extends Controller
         if($request->hasFile('imagen')){
             $professor->imagen = $request->file('imagen')->store('public/courses');
         }
+        if($request->hasFile('identify_document')){
+            $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
+        }
         $professor->save();
         // return $request;
         // return 'La información del docente se ha actualizado exitosamente';

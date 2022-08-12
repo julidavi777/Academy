@@ -45,15 +45,14 @@ class TeacherController extends Controller
 
         // return $request->all();
         $professor = new Teacher();
-        $professor->name = request('name');
-        $professor->last_name = request('last_name');
-        $professor->college_degree = request('college_degree');
-        $professor->age = request('age');
-        $professor->contract_date = request('contract_date');
+        $professor->name = $request->input('name');
+        $professor->last_name = $request->input('last_name');
+        $professor->college_degree = $request->input('college_degree');
+        $professor->age = $request->input('age');
+        $professor->contract_date = $request->input('contract_date');
         if($request->hasFile('imagen')){
             $professor->imagen = $request->file('imagen')->store('public/teachers');
         }
-        $data = new Teacher();
         if($request->hasFile('identify_document')){
             $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
         }

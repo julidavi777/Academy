@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <label for="age"><b>Edad:</b></label>
-                            <input id="age" class="form-control" type="text" name="age" value="{{$professor->age}}">
+                            <input id="age" class="form-control" type="number" name="age" value="{{$professor->age}}">
                         </div>
                         <div class="form-group">
                             <label for="contract_date"><b>Fecha Contrato:</b></label>
@@ -39,36 +39,14 @@
                         <div class="form-group">
                             <label for="imagen"><b>Cargue la foto del docente:</b></label>
                             <br>
-                            <label for="imagen"> <img src="{{ Storage::url($professor->imagen) }}" width="50" height="50" alt=""></label>
+                            <label for="imagen"> <img src="{{ Storage::url($professor->imagen) }}" width="50" height="50" alt=""> </label>
                             <input id="imagen" class="" type="file" name="imagen">
                         </div>
                         <div class="form-group">
                             <label for="identify_document"><b>Cargue el documento de Identidad:</b></label>
                             <br>
-                            {{-- <label for="identify_document"> <img src="{{ Storage::url($professor->idetify_document) }}" width="50" height="50" alt=""></label> --}}
+                            <label for="identify_document"> <iframe src="{{ Storage::url($professor->identify_document) }}" width="100" height="100"></iframe> </label>
                             <input id="identify_document" class="" type="file" name="identify_document">
-                        </div>
-                        <br>
-                        <div class="button text-center">
-                            <button class="btn btn-success" type="submit">Agregar</button>
-                        </div>
-                        <div class="form-group">
-                            <label for="name"><b>Nombre del curso:</b></label>
-                            <input id="name" class="form-control" type="text" name="name" value="{{$grade->name}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="description"><b>Descripción:</b></label>
-                            <input id="description" class="form-control" type="text" name="description" value="{{$grade->description}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="duration"><b>Duración (horas):</b></label>
-                            <input id="duration" class="form-control" type="text" name="duration" value="{{$grade->duration}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="imagen"><b>Cargue la imagen del curso:</b></label>
-                            <br>
-                            <label for="description"> <img src="{{ Storage::url($grade->imagen) }}" width="50" height="50" alt=""></label>
-                            <input id="imagen" class="" type="file" name="imagen">
                         </div>
                         <br>
                         <div class="button text-center">

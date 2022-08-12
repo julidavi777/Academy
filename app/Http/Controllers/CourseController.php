@@ -62,10 +62,11 @@ class CourseController extends Controller
             $grade->imagen = $request->file('imagen')->store('public/courses');
         }
         $grade->save();//Comando para registrar la info en la bd
-        return 'El curso se ha guardado exitosamente';
+        // return 'El curso se ha guardado exitosamente';
         // return $grade->description;
         // return $grade;
         // return $request->input('name');
+        return view('courses.add_course');
     }
 
     /**
@@ -112,7 +113,8 @@ class CourseController extends Controller
         }
         $grade->save();
         // return $request;
-        return 'La información del curso se ha actualizado exitosamente';
+        // return 'La información del curso se ha actualizado exitosamente';
+        return view('courses.edit_course');
     }
 
     /**
@@ -131,8 +133,9 @@ class CourseController extends Controller
         $fullRoute = public_path() . $imageName;
         unlink($fullRoute);
         $grade->delete();
-        return 'El curso se ha eliminado exitosamente';
+        // return 'El curso se ha eliminado exitosamente';
         // return $fullRoute;
+        return view('courses.del_course');
 
     }
 }

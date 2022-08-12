@@ -53,11 +53,13 @@ class TeacherController extends Controller
         if($request->hasFile('imagen')){
             $professor->imagen = $request->file('imagen')->store('public/teachers');
         }
+        $data = new Teacher();
         if($request->hasFile('identify_document')){
-            $professor->imagen = $request->file('imagen')->store('public/identify_document');
+            $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
         }
         $professor->save();//Comando para registrar la info en la bd
         // return 'El docente se ha agregado exitosamente';
+        return view('teachers.add_teacher');
     }
 
     /**
@@ -104,7 +106,8 @@ class TeacherController extends Controller
         }
         $professor->save();
         // return $request;
-        return 'La información del docente se ha actualizado exitosamente';
+        // return 'La información del docente se ha actualizado exitosamente';
+        return view('teachers.edit_teacher');
     }
 
     /**
@@ -122,8 +125,15 @@ class TeacherController extends Controller
         $imageName = str_replace('public/', '\storage\\', $urlImagenBD);
         $fullRoute = public_path() . $imageName;
         unlink($fullRoute);
-        $professor->delete();
-        return 'El curso se ha eliminado exitosamente';
+        // $professor->delete();
+        // return 'El curso se ha eliminado exitosamente';
         // return $fullRoute;
+
+        $urlDocument = $professor->identify_document;
+        $documentName = str_replace('public/', '\storage\\', $urlDocument);
+        $fullRoute = public_path() . $documentName;
+        unlink($fullRoute);
+        $professor->delete();
+        return view('teachers.del_teacher');
     }
 }

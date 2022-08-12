@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label for="age"><b>Edad:</b></label>
-                            <input id="age" class="form-control" type="text" name="age">
+                            <input id="age" class="form-control" type="number" name="age">
                         </div>
                         <div class="form-group">
                             <label for="contract_date"><b>Fecha Contrato:</b></label>
@@ -46,11 +46,11 @@
                         </div>
                         <div class="form-group">
                             <label for="imagen"><b>Cargue la foto del docente:</b></label>
-                            <input id="imagen" class="" type="file" name="imagen">
+                            <input id="imagen" class="" type="file" name="imagen" accept="image/*">
                         </div>
                         <div class="form-group">
                             <label for="identify_document"><b>Cargue el documento de Identidad:</b></label>
-                            <input id="identify_document" class="" type="file" name="identify_document">
+                            <input id="identify_document" class="" type="file" name="identify_document" accept="application/pdf">
                         </div>
                         <br>
                         <div class="button text-center">

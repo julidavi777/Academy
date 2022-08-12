@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="resources/css/app.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-success bg-success fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-info bg-info fixed-top">
             <a class="navbar-brand text-white" href="/teachers">
                 <img src= {{ asset('logo_transparent.png') }} width="70" height="70" alt="">
             </a>
@@ -19,7 +19,7 @@
                         <a class="nav-link text-white" href="/teachers/create">Agregar Docente<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="/courses">Cursos<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="/courses">Listado Cursos<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>

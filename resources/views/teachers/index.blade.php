@@ -13,11 +13,12 @@
 
             <div class="col-sm">
                 <div class="card" style="width: 20rem;">
-                    <img src="{{ Storage::url($tutor->imagen) }}" width="300" height="220" alt="">
+                    <div class="text-center mt-2">
+                        <img src="{{ Storage::url($tutor->imagen) }}" width="300" height="250" alt="">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title"> {{$tutor->name}} </h5>
-                        {{-- <p class="card-text"> <b>Contenido:</b> {{$tutor->description}} </p> --}}
-                        {{-- <p class="card-text"> <b>Duración:</b> {{$tutor->duration}} Horas</p> --}}
+                        <h5 class="card-title text-center"> {{$tutor->name}} {{$tutor->last_name}} </h5>
+                        <br>
                         <div class="text-center">
                             <a href="/teachers/{{$tutor->id}}" class="btn btn-primary">Ver información</a>
                         </div>

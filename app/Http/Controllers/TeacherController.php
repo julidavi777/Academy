@@ -101,7 +101,7 @@ class TeacherController extends Controller
         // return $professor;
         $professor->fill($request->except('imagen'));
         if($request->hasFile('imagen')){
-            $professor->imagen = $request->file('imagen')->store('public/courses');
+            $professor->imagen = $request->file('imagen')->store('public/teachers');
         }
         if($request->hasFile('identify_document')){
             $professor->identify_document = $request->file('identify_document')->store('public/identify_document');

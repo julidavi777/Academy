@@ -95,7 +95,7 @@ class TeacherController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(storeTeacherRequest $request, $id)
     {
         $professor = Teacher::find($id);
         // return $professor;

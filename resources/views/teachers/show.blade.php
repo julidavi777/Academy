@@ -9,7 +9,7 @@
         <p class="card-text"> <b>Nombre(s):</b> {{$professor->name}} </p>
         <p class="card-text"> <b>Apellido(s):</b> {{$professor->last_name}} </p>
         <p class="card-text"> <b>Titulo Universitario:</b> {{$professor->college_degree}} </p>
-        <p class="card-text"> <b>Edad:</b> {{$professor->age}} </p>
+        <p class="card-text"> <b>Edad:</b> {{$professor->age}} años </p>
         <p class="card-text"> <b>Fecha Contrato:</b> {{$professor->contract_date}} </p>
         <p class="card-text"> <b>Documento de Identidad:</b>
             <br>

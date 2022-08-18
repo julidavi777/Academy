@@ -99,7 +99,7 @@ class TeacherController extends Controller
     {
         $professor = Teacher::find($id);
         // return $professor;
-        $professor->fill($request->except('imagen'));
+        $professor->fill($request->except('imagen', 'identify_document'));
         if($request->hasFile('imagen')){
             $professor->imagen = $request->file('imagen')->store('public/teachers');
         }

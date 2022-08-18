@@ -29,8 +29,8 @@ class storeTeacherRequest extends FormRequest
             'college_degree' => 'required|max:50',
             'age' => 'required|size:2',
             'contract_date' => 'required:nullable|date',
-            'imagen' => 'required|file|max:5120',
-            'identify_document' => 'required'
+            'imagen' => 'required|image|max:5120',
+            'identify_document' => 'required|mimes:pdf'
         ];
     }
 }

@@ -28,7 +28,7 @@ class storeTeacherRequest extends FormRequest
             'last_name' => 'required|max:45',
             'college_degree' => 'required|max:50',
             'age' => 'required|size:2',
-            'contract_date' => 'nullable|date',
+            'contract_date' => 'required:nullable|date',
             'imagen' => 'required|file|max:5120',
             'identify_document' => 'required'
         ];

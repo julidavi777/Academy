@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('name', 45);
             $table->string('first_last_name', 45);
             $table->string('second_last_name', 45);
-            $table->string('issuing_municipality');
             $table->enum('gender', ['M', 'F']);
             $table->date('birth_date');
             $table->string('birth_country');

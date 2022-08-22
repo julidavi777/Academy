@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->enum('document_type', ['CC', 'TI', 'CE']);
+            $table->enum('document_type', ['CC', 'TI', 'CE', 'OTROS']);
             $table->integer('document_number');
             $table->string('identify_document');
             $table->string('document_issuing_country');

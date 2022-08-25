@@ -31,6 +31,10 @@ return new class extends Migration
             $table->string('birth_department');
             $table->string('birth_municipality');
             $table->integer('stratum');
+            $table->unsignedBigInteger('id_courses');
+
+            $table->foreign('id_courses')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('id_minicipalities')->references('id')->on('municipalities')->onDelete('cascade');
 
 
         });

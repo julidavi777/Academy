@@ -9,4 +9,11 @@ class Municipality extends Model
 {
     protected $fillable = ['name', 'department_id'];
     use HasFactory;
+
+    public function departaments(){
+        return $this->belongsTo(Departaments::class);
+    }
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
 }

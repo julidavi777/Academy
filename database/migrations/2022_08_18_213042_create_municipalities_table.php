@@ -18,7 +18,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->integer('department_id');
+            $table->foreign('id_department')->references('id')->on('departments')->onDelete('cascade');
+            $table->foreign('id_student')->references('id')->on('students')->onDelete('cascade');
         });
+       
     }
 
     /**

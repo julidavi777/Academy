@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->integer('duration');
+            $table->foreign('id_students')->references('id')->on('students')->onDelete('')
         });
     }
 

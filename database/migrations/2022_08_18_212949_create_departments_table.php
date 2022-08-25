@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->unsignedBigInteger('id_municipality'); 
+            $table->unsignedBigInteger('id_country'); 
+            $table->foreign('id_municipality')->references('id')->on('municipalities')->onDelete('cascade');
+            $table->foreign('id_country')->references('id')->on('countries')->onDelete('cascade');
         });
     }
 

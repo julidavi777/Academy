@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->unsigneBigInteger('id_department');
+            $table->foreign('id_department')->references('id')->on('deparments')->onDelete('cascade');
+            
+            
         });
     }
 

@@ -9,4 +9,8 @@ class Country extends Model
 {
     protected $fillable = ['name'];
     use HasFactory;
+
+    public function departament(){
+        return $this->hasMany('Departament');
+    }
 }

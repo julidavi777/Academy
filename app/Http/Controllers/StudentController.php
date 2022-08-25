@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\storeStudentRequest;
+use App\Models\Country;
+use App\Models\Department;
+use App\Models\Municipality;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -26,7 +30,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        $countries = Country::all();
+        $departments = Department::all();
+        $municipalities = Municipality::all();
+        return view('students.create', compact('countries', 'departments', 'municipalities'));
     }
 
     /**
@@ -35,33 +42,30 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(storeStudentRequest $request)
     {
-        // if($request->hasFile('identify_document')){
-        //     $file = $request->file('identify_document');
-        // }
-        // return $request->all();
         $apprentice = new Student();
         $apprentice->document_type = $request->input('document_type');
         $apprentice->document_number = $request->input('document_number');
         if($request->hasFile('identify_document')){
             $apprentice->identify_document = $request->file('identify_document')->store('public/students/identify_document');
         }
-        $apprentice->document_issuing_country = $request->input('document_issuing_country');
-        $apprentice->issuing_department = $request->input('issuing_department');
-        $apprentice->issuing_municipality = $request->input('issuing_municipality');
         $apprentice->expedition_date = $request->input('expedition_date');
-        $apprentice->name = $request->input('name');
-        $apprentice->first_last_name = $request->input('first_last_name');
-        $apprentice->second_last_name = $request->input('second_last_name');
+        $apprentice->id_exped_muni = $request->input('id_exped_muni');
+        $apprentice->exped_dept = $request->input('exped_dept');
+        $apprentice->exped_land = $request->input('exped_land');
+        $apprentice->name = $request->input('names');
+        $apprentice->first_last_name = $request->input('last_name1');
+        $apprentice->second_last_name = $request->input('last_name2');
         $apprentice->gender = $request->input('gender');
         $apprentice->birth_date = $request->input('birth_date');
-        $apprentice->birth_country = $request->input('birth_country');
-        $apprentice->birth_department = $request->input('birth_department');
-        $apprentice->birth_municipality = $request->input('birth_municipality');
+        $apprentice->birth_country = $request->input('id_birth_country');
+        $apprentice->birth_department = $request->select('id_birth_department');
+        $apprentice->birth_municipality = $request->input('id_birth_municipality');
         $apprentice->stratum = $request->input('stratum');
         $apprentice->save();
         return view('students.add_student');
+        // return $request;
     }
 
     /**
@@ -98,7 +102,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(storeStudentRequest $request, $id)
     {
         $apprentice = Student::find($id);
         // return $apprentice;

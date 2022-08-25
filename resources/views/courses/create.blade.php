@@ -37,8 +37,8 @@
                             <input id="duration" class="form-control" type="text" name="duration">
                         </div>
                         <div class="form-group">
-                            <label for="imagen"><b>Cargue la imagen del curso:</b></label>
-                            <input id="imagen" class="" type="file" name="imagen">
+                            <label for="image"><b>Cargue la imagen del curso:</b></label>
+                            <input id="image" class="" type="file" name="image">
                         </div>
                         <br>
                         <div class="button text-center">

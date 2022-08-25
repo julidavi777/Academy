@@ -13,7 +13,7 @@
 
             <div class="col-sm">
                 <div class="card" style="width: 20rem;">
-                    <img src="{{ Storage::url($training->imagen) }}" width="300" height="220" alt="">
+                    <img src="{{ Storage::url($training->image) }}" width="300" height="220" alt="">
                     <div class="card-body">
                         <h5 class="card-title text-center"> {{$training->name}} </h5>
                         <br>

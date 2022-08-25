@@ -15,14 +15,17 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();//Registra el tiempo de creación de la tabla
             $table->string('name', 255);
             $table->string('last_name', 255);
             $table->string('college_degree', 255);
             $table->integer('age');
             $table->date('contract_date');
-            $table->string('imagen', 255);
+            $table->string('image', 255);
             $table->string('identify_document', 255);
+            $table->unsignedBigInteger('subject_id');
+            $table->timestamps();//Registra el tiempo de creación de la tabla
+            //A continuación se indica hacia donde apuntan estas foráneas
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');;
         });
     }
 

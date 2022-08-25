@@ -12,19 +12,7 @@
         {{--  la doble llave sirve para interpolar, interpolar es traer una variable de otro lenguaje al lenguaje que se esta usando acutalmente --}}
 
             <div class="col-sm">
-                <div class="card" style="width: 20rem;">
-                    <div class="text-center mt-2">
-                        <img src="{{ Storage::url($student->imagen) }}" width="300" height="250" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center"> {{$student->name}} {{$student->last_name}} </h5>
-                        <br>
-                        <div class="text-center">
-                            <a href="/teachers/{{$student->id}}" class="btn btn-primary">Ver información</a>
-                        </div>
-                    </div>
-                </div>
-                <br>
+                
             </div>
 
         @endforeach

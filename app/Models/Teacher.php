@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
-    protected $fillable = ['name', 'last_name', 'college_degree', 'age', 'contract_date', 'imagen', 'identify_document'];
+    protected $fillable = ['name', 'last_name', 'college_degree', 'age', 'contract_date', 'image', 'identify_document'];
     use HasFactory;
+
+    public function subjects(){
+        return $this->belongsTo(Subject::class);
+    }
 }

@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label for="imagen"><b>Cargue la imagen del curso:</b></label>
                             <br>
-                            <label for="description"> <img src="{{ Storage::url($grade->imagen) }}" width="50" height="50" alt=""></label>
+                            <label for="description"> <img src="{{ Storage::url($grade->image) }}" width="50" height="50" alt=""></label>
                             <input id="imagen" class="" type="file" name="imagen">
                         </div>
                         <br>

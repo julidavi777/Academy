@@ -14,7 +14,7 @@
             <div class="col-sm">
                 <div class="card" style="width: 20rem;">
                     <div class="text-center mt-2">
-                        <img src="{{ Storage::url($tutor->imagen) }}" width="300" height="250" alt="">
+                        <img src="{{ Storage::url($tutor->image) }}" width="300" height="250" alt="">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center"> {{$tutor->name}} {{$tutor->last_name}} </h5>

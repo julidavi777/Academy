@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('course_subjects', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('subject_id');
             $table->timestamps();
+            //A continuación se indica hacia donde apuntan estas foráneas
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');;
         });
     }
 

@@ -15,7 +15,7 @@
         <hr>
         <div class="row">
                 <div class="col-sm rounded">
-                        <form action="/teachers" method="POST" class="mx-3 px-3 pb-3" enctype="multipart/form-data">
+                        <form action="/students" method="POST" class="mx-3 px-3 pb-3" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 @foreach ($errors->all() as $alert)
@@ -29,142 +29,160 @@
                             <h5>Documenento de identidad</h5>
                             <br>
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-6 col-form-label">Tipo de documento *</label>
+                                    <label for="document_type" class="col-sm-6 col-form-label">Tipo de documento *</label>
                                     <div class="col-sm-6">
-                                        <select class="form-control" class="document_type">
+                                        <select class="form-control" id="document_type" name="document_type">
                                             <option>Seleccionar</option>
+                                            <option value="CC">CC</option>
+                                            <option value="TI">TI</option>
+                                            <option value="CE">CE</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="document_number" class="col-sm-6 col-form-label">No. de documento *</label>
                                     <div class="col-sm-6">
-                                        <input type="number" class="form-control" id="document_number">
+                                        <input type="number" class="form-control" name="document_number" id="document_number">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="identify_document" class="col-sm-6 col-form-label">Cargue Docum. Identificación *</label>
                                     <div class="col-sm-6">
-                                        <input type="file" class="hidden" id="identify_document" title="Examinar"/>
+                                        <input type="file" class="hidden" id="identify_document" name="identify_document" accept="application/pdf" title="Examinar"/>
                                         {{-- <input type="button" class="btn btn-success" value="Examinar"> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-6 col-form-label">País de expedición *</label>
+                                    <label for="exped_land" class="col-sm-6 col-form-label">País de expedición *</label>
                                     <div class="col-sm-6">
-                                        <select class="form-control" class="document_type">
+                                        <select class="form-control" name="exped_land" id="exped_land">
                                             <option>Seleccionar</option>
+                                            @foreach ( $countries as $land)
+                                                <option value="">{{ $land->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-6 col-form-label">Depto donde fue expedido *</label>
+                                    <label for="exped_dept" class="col-sm-6 col-form-label">Depto donde fue expedido *</label>
                                     <div class="col-sm-6">
-                                        <select class="form-control" class="document_type">
+                                        <select class="form-control" id="exped_dept" name="exped_dept">
                                             <option>Seleccionar</option>
+                                            @foreach ( $departments as $dept)
+                                                <option value="">{{ $dept->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="staticEmail" class="col-sm-6 col-form-label">Municipio donde fue expedido *</label>
+                                    <label for="id_exped_muni" class="col-sm-6 col-form-label">Municipio donde fue expedido *</label>
                                     <div class="col-sm-6">
-                                        <select class="form-control" class="document_type">
+                                        <select class="form-control" id="id_exped_muni" name="id_exped_muni">
                                             <option>Seleccionar</option>
+                                            @foreach ( $municipalities as $city)
+                                                <option value="">{{ $city->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="document_number" class="col-sm-6 col-form-label">Fecha de expedición *</label>
+                                    <label for="expedition_date" class="col-sm-6 col-form-label">Fecha de expedición *</label>
                                     <div class="col-sm-6">
-                                        <input type="date" class="form-control" id="document_number">
+                                        <input type="date" class="form-control" name="expedition_date" id="expedition_date">
                                     </div>
                                 </div>
-                        </form>
                 </div>
-                <div class="col-sm rounded">
-                    <form action="/teachers" method="POST" class="mx-3 px-3 pb-3" enctype="multipart/form-data">
-                        @csrf
-                        @if ($errors->any())
-                            @foreach ($errors->all() as $alert)
-                                <div class="alert alert-danger" role="alert">
-                                    <ul>
-                                        <li>{{$alert}}</li>
-                                    </ul>
-                                </div>
-                            @endforeach
-                        @endif
+                <div class="col-sm mx-3 px-3 pb-3 rounded">
                         <h5>Datos de identificación</h5>
                         <br>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Nombres *</label>
+                                <label for="names" class="col-sm-6 col-form-label">Nombres *</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="document_number">
+                                    <input type="text" class="form-control" id="names" name="names">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Primer apellido *</label>
+                                <label for="last_name1" class="col-sm-6 col-form-label">Primer apellido *</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="document_number">
+                                    <input type="text" class="form-control" id="last_name1" name="last_name1">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Segundo apellido *</label>
+                                <label for="last_name2" class="col-sm-6 col-form-label">Segundo apellido</label>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" id="document_number">
+                                    <input type="text" class="form-control" id="last_name2" name=last_name2>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Género *</label>
+                                <label for="gender" class="col-sm-6 col-form-label">Género *</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control" class="document_type">
+                                    <select class="form-control" class="document_type" id="gender" name="gender">
                                         <option>Seleccionar</option>
+                                        <option value="M">M</option>
+                                        <option value="F">F</option>
+                                        <option value="OTROS">OTROS</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="document_number" class="col-sm-6 col-form-label">Fecha de nacimiento *</label>
+                                <label for="birth_date" class="col-sm-6 col-form-label">Fecha de nacimiento *</label>
                                 <div class="col-sm-6">
-                                    <input type="date" class="form-control" id="document_number">
+                                    <input type="date" class="form-control" id="birth_date" name="birth_date">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">País de nacimiento *</label>
+                                <label for="id_birth_country" class="col-sm-6 col-form-label">País de nacimiento *</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control" class="document_type">
+                                    <select class="form-control" name="id_birth_country" id="id_birth_country">
                                         <option>Seleccionar</option>
+                                        @foreach ( $countries as $land)
+                                            <option value="">{{ $land->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Departamento de nacimiento *</label>
+                                <label for="id_birth_department" class="col-sm-6 col-form-label">Departamento de nacimiento *</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control" class="document_type">
+                                    <select class="form-control" name="id_birth_department" id="id_birth_department">
                                         <option>Seleccionar</option>
+                                        @foreach ( $departments as $dept)
+                                            <option value="">{{ $dept->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Municipio de nacimiento *</label>
+                                <label for="id_birth_municipality" class="col-sm-6 col-form-label">Municipio de nacimiento *</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control" class="document_type">
+                                    <select class="form-control" name="id_birth_municipality" id="id_birth_municipality">
                                         <option>Seleccionar</option>
+                                        @foreach ( $municipalities as $city)
+                                            <option value="">{{ $city->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-6 col-form-label">Estrato socioeconómico *</label>
+                                <label for="stratum" class="col-sm-6 col-form-label">Estrato socioeconómico *</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control" class="document_type">
+                                    <select class="form-control" name="stratum" id="stratum">
                                         <option>Seleccionar</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class="buttons">
                                 <input type="button" class="btn btn-secondary" value="Regresar">
-                                <input type="button" class="btn btn-success" value="Guardar">
+                                <input type="submit" class="btn btn-success" value="Guardar">
                             </div>
-
-                    </form>
+                        </form>
             </div>
         </div>
     </div>

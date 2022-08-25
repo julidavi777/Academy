@@ -19,23 +19,28 @@ return new class extends Migration
             $table->integer('document_number');
             $table->string('identify_document');
             $table->date('expedition_date');
-            $table->unsignedBigInteger('id_esped_muni');
+            $table->unsignedBigInteger('id_exped_muni');
+            $table->string('exped_dept');
+            $table->string('exped_land');
             $table->string('names', 45);
             $table->string('last_name1', 45);
             $table->string('last_name2', 45);
             $table->enum('gender', ['M', 'F', 'OTROS']);
             $table->date('birth_date');
-            $table->string('birth_country');
-            $table->string('birth_department');
-            $table->string('birth_municipality');
+            $table->unsignedBigInteger('id_birth_country');
+            $table->unsignedBigInteger('id_birth_department');
+            $table->unsignedBigInteger('id_birth_municipality');
             $table->integer('stratum');
             $table->unsignedBigInteger('id_course');
             $table->unsignedBigInteger('id_birth_muni');
             $table->timestamps();
             //A continuación se indica hacia donde apuntan estas foráneas
-            $table->foreign('id_esped_muni')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('id_exped_muni')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');;
             $table->foreign('id_birth_muni')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');;
             $table->foreign('id_course')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('id_birth_country')->references('id')->on('countries')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('id_birth_department')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('id_birth_municipality')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');;
         });
     }
 

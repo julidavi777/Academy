@@ -45,8 +45,8 @@
                             <input id="contract_date" class="form-control" type="date" name="contract_date">
                         </div>
                         <div class="form-group">
-                            <label for="imagen"><b>Cargue la foto del docente:</b></label>
-                            <input id="imagen" class="" type="file" name="imagen" accept="image/*">
+                            <label for="image"><b>Cargue la foto del docente:</b></label>
+                            <input id="image" class="" type="file" name="image" accept="image/*">
                         </div>
                         <div class="form-group">
                             <label for="identify_document"><b>Cargue el documento de Identidad:</b></label>

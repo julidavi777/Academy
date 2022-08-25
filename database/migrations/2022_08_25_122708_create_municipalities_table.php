@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('municipalities', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
-            $table->integer('department_id');
+            $table->unsignedBigInteger('department_id');
+            $table->timestamps();
+            //A continuación se indica hacia donde apuntan estas foráneas
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');;
         });
     }
 

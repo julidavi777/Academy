@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Ice_cream_shopController;
 // use App\Http\Controllers\PriceController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 
 /*
@@ -60,3 +61,5 @@ Route::get('/about_us', function () {
 // });
 
 Route::resource('teachers', TeacherController::class);
+
+Route::resource('students', StudentController::class);

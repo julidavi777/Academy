@@ -15,23 +15,27 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->enum('document_type', ['CC', 'TI', 'CE']);
             $table->integer('document_number');
             $table->string('identify_document');
-            $table->string('document_issuing_country');
-            $table->string('issuing_department');
-            $table->string('issuing_municipality');
             $table->date('expedition_date');
-            $table->string('name', 45);
-            $table->string('first_last_name', 45);
-            $table->string('second_last_name', 45);
+            $table->unsignedBigInteger('id_esped_muni');
+            $table->string('names', 45);
+            $table->string('last_name1', 45);
+            $table->string('last_name2', 45);
             $table->enum('gender', ['M', 'F', 'OTROS']);
             $table->date('birth_date');
             $table->string('birth_country');
             $table->string('birth_department');
             $table->string('birth_municipality');
             $table->integer('stratum');
+            $table->unsignedBigInteger('id_course');
+            $table->unsignedBigInteger('id_birth_muni');
+            $table->timestamps();
+            //A continuación se indica hacia donde apuntan estas foráneas
+            $table->foreign('id_esped_muni')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('id_birth_muni')->references('id')->on('municipalities')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('id_course')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');;
         });
     }
 

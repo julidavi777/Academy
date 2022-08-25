@@ -22,6 +22,9 @@
                         <a class="nav-link text-white" href="/courses">Listado Cursos<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link text-white" href="/students">Estudiantes<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link text-white" href="/about_us">Sobre nosotros<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>

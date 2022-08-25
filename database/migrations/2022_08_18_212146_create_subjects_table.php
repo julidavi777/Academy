@@ -18,6 +18,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->integer('hourly_intensity');
+            $table->unsignedBigInteger('id_course');
+            $table->unsignedBigInteger('id_teacher');
+            $table->foreignId('id_teacher')->nullable()->constrained('teacher')->cascadeOnDelete()->nullOnDelete();            
+            $table->foreignId('id_course')->nullable()->constrained('course_subject')->cascadeOnDelete()->nullOnDelete();
+
         });
     }
 

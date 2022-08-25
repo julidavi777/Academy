@@ -19,7 +19,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->integer('duration');
-            $table->foreign('id_students')->references('id')->on('students')->onDelete('')
+            $table->unignedBigInteger('id_students'); 
+            $table->foreignId('id_subject')->constrained('course_subject')->cascadeOnDelete()->nullOnDelete();
+            $table->foreign('id_students')->references('id')->on('students')->onDelete('cascade');
+
         });
     }
 

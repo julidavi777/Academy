@@ -28,7 +28,7 @@
                                     </div>
                                 @endforeach
                             @endif
-                            <h5>Documenento de identidad</h5>
+                            <h5>Documento de identidad</h5>
                             <br>
                                 <div class="form-group row">
                                     <label for="document_type" class="col-sm-6 col-form-label">Tipo de documento *</label>
@@ -181,7 +181,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="buttons">
                                 <input type="button" class="btn btn-secondary" value="Regresar">
                                 <input type="submit" class="btn btn-success" value="Guardar">

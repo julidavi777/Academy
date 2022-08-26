@@ -59,3 +59,6 @@ Route::get('/about_us', function () {
 Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
+Route::get('student/show', function () {
+    return view('students/show');
+});

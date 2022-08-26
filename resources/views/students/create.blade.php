@@ -50,8 +50,7 @@
                                 <div class="form-group row">
                                     <label for="identify_document" class="col-sm-6 col-form-label">Cargue Docum. Identificación *</label>
                                     <div class="col-sm-6">
-                                        <input type="file" class="hidden" id="identify_document" name="identify_document" accept="application/pdf" title="Examinar"/>
-                                        {{-- <input type="button" class="btn btn-success" value="Examinar"> --}}
+                                        <input type="file" class="d-none" id="identify_document" name="identify_document" accept="application/pdf" title="Examinar"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">

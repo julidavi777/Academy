@@ -29,17 +29,17 @@
                         </thead>
                     <tbody>
                         <tr>
-                            {{-- @foreach ($students as $student) --}}
+                             {{-- @foreach ($students as $student) --}}
 
 
                             {{-- @foreach ( $apprentice as $student ) --}}
-                            <td class="p-2">maria </td>
+                             <td class="p-2">maria </td>
                             <td class="p-2">fernanda</td>
                             <td class="p-2">m</td>
                             <td class="p-2">cc</td>
                             <td class="p-2">1088312276</td>
                             <td class="p-2">26/04/1994</td>
-                            <td class="p-2"> <button class="btn btn-primary">Ver</button>
+                            <td class="p-2"> <a href="localhost:8000/students/{{student->id}}"><button class="btn btn-primary">Ver</button></a>
                                 <button class="btn btn-secondary">editar</button>
                                 <button class="btn btn-danger">eliminar</button></td>
 {{--
@@ -50,11 +50,11 @@
                             <td class="p-2">1088312276{{$student->document_number}}</td>
                             <td class="p-2">26/04/1994{{$student->municipalitiesBirth}}</td> --}}
                         </tr>
+                         {{-- @endforeach --}}
                     </tbody>
                 </table>
             </div>
 
-        {{-- @endforeach --}}
     </div>
 
 @endsection

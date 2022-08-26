@@ -16,10 +16,10 @@
             <div id="my-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="/teachers/create">Agregar Docente<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="/teachers/create">Crear Docente<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="/courses">Listado Cursos<span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="/courses">Cursos<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link text-white" href="/students">Estudiantes<span class="sr-only">(current)</span></a>

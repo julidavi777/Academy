@@ -4,6 +4,8 @@
 
 @section('content')
 
+<h2 class="text-start mx-3 mt-5 pt-3">Crear Estudiante Nuevo </h2>
+
     <div class="container2 form bg-light text-dark rounded">
         <h3 class="text-start mx-3 mt-5 pt-3">Información básica</h3>
         <br>
@@ -14,8 +16,8 @@
         </div>
         <hr>
         <div class="row">
-                <div class="col-sm rounded">
-                        <form action="/students" method="POST" class="mx-3 px-3 pb-3" enctype="multipart/form-data">
+                <div class="col-sm-4 mx-5 pb-3 rounded">
+                        <form action="/students" method="POST" class="" enctype="multipart/form-data">
                             @csrf
                             @if ($errors->any())
                                 @foreach ($errors->all() as $alert)
@@ -64,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="exped_dept" class="col-sm-6 col-form-label">Depto donde fue expedido *</label>
+                                    <label for="exped_dept" class="col-sm-6 col-form-label">Depto. donde fue expedido *</label>
                                     <div class="col-sm-6">
                                         <select class="form-control" id="exped_dept" name="exped_dept">
                                             <option>Seleccionar</option>
@@ -92,7 +94,9 @@
                                     </div>
                                 </div>
                 </div>
-                <div class="col-sm mx-3 px-3 pb-3 rounded">
+                <div class="col-sm ms-5 me-5 pb-3 rounded">
+                </div>
+                <div class="col-sm-4 mx-5 px-1 pb-3 rounded">
                         <h5>Datos de identificación</h5>
                         <br>
                             <div class="form-group row">

@@ -56,10 +56,6 @@ Route::get('/about_us', function () {
     return view('about_us');
 });
 
-// Route::get('teachers', function () {
-//     return view('teachers.index');
-// });
-
 Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);

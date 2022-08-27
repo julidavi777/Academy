@@ -17,4 +17,8 @@ class Student extends Model
     public function municipalitiesBirth(){
         return $this->belongsTo(Municipality::class);
     }
+
+    public function courses(){
+        return $this->belongsTo(Course::class);
+    }
 }

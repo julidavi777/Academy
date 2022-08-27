@@ -48,8 +48,8 @@ class CourseController extends Controller
         //     'imagen' => 'required|image'
         // ]);
 
-        if($request->hasFile('imagen')){
-            $file = $request->file('imagen');
+        if($request->hasFile('image')){
+            $file = $request->file('image');
         }
 
         //Se devuelve la petición hecha al servidor
@@ -58,8 +58,8 @@ class CourseController extends Controller
         $grade->name = $request->input('name');
         $grade->description = $request->input('description');
         $grade->duration = $request->input('duration');
-        if($request->hasFile('imagen')){
-            $grade->imagen = $request->file('imagen')->store('public/courses');
+        if($request->hasFile('image')){
+            $grade->image = $request->file('image')->store('public/courses');
         }
         $grade->save();//Comando para registrar la info en la bd
         // return 'El curso se ha guardado exitosamente';
@@ -107,9 +107,9 @@ class CourseController extends Controller
     {
         $grade = Course::find($id);
         // return $grade;
-        $grade->fill($request->except('imagen'));
-        if($request->hasFile('imagen')){
-            $grade->imagen = $request->file('imagen')->store('public/courses');
+        $grade->fill($request->except('image'));
+        if($request->hasFile('image')){
+            $grade->image = $request->file('image')->store('public/courses');
         }
         $grade->save();
         // return $request;
@@ -127,7 +127,7 @@ class CourseController extends Controller
     {
         $grade = Course::find($id);
         // return $grade;
-        $urlImagenBD = $grade->imagen;
+        $urlImagenBD = $grade->image;
         // return $urlImagenBD;
         $imageName = str_replace('public/', '\storage\\', $urlImagenBD);
         $fullRoute = public_path() . $imageName;

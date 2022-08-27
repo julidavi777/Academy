@@ -82,7 +82,7 @@
                                         <select class="form-control" id="id_exped_muni" name="id_exped_muni">
                                             <option>Seleccionar</option>
                                             @foreach ( $municipalities as $city)
-                                                <option value="">{{ $city->name }}</option>
+                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -94,9 +94,9 @@
                                     </div>
                                 </div>
                 </div>
-                <div class="col-sm ms-5 me-5 pb-3 rounded">
+                <div class="col-sm rounded">
                 </div>
-                <div class="col-sm-4 mx-5 px-1 pb-3 rounded">
+                <div class="col-sm-5 mx-5 px-1 pb-3 rounded">
                         <h5>Datos de identificación</h5>
                         <br>
                             <div class="form-group row">
@@ -157,12 +157,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="id_birth_municipality" class="col-sm-6 col-form-label">Municipio de nacimiento *</label>
+                                <label for="id_birth_muni" class="col-sm-6 col-form-label">Municipio de nacimiento *</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control" name="id_birth_municipality" id="id_birth_municipality">
+                                    <select class="form-control" name="id_birth_muni" id="id_birth_muni">
                                         <option>Seleccionar</option>
                                         @foreach ( $municipalities as $city)
-                                            <option value="">{{ $city->name }}</option>
+                                            <option value="{{ $city->id }}">{{ $city->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -181,7 +181,18 @@
                                     </select>
                                 </div>
                             </div>
-                            
+                            <div class="form-group row">
+                                <label for="id_course" class="col-sm-6 col-form-label">Curso</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control" name="id_course" id="id_course">
+                                        <option>Seleccionar</option>
+                                        @foreach ( $courses as $grade)
+                                            <option value="{{ $grade->id }}">{{ $grade->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="buttons">
                                 <input type="button" class="btn btn-secondary" value="Regresar">
                                 <input type="submit" class="btn btn-success" value="Guardar">

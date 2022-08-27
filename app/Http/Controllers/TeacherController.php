@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\storeTeacherRequest;
+use App\Models\Course;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,9 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('teachers.create');
+        $courses = Course::all();
+        $teachers = Teacher::all();
+        return view('teachers.create', compact('teachers', 'courses'));
     }
 
     /**
@@ -39,8 +42,8 @@ class TeacherController extends Controller
      */
     public function store(storeTeacherRequest $request)
     {
-        if($request->hasFile('imagen')){
-            $file = $request->file('imagen');
+        if($request->hasFile('image')){
+            $file = $request->file('image');
         }
 
         // return $request->all();
@@ -50,12 +53,13 @@ class TeacherController extends Controller
         $professor->college_degree = $request->input('college_degree');
         $professor->age = $request->input('age');
         $professor->contract_date = $request->input('contract_date');
-        if($request->hasFile('imagen')){
-            $professor->imagen = $request->file('imagen')->store('public/teachers');
+        if($request->hasFile('image')){
+            $professor->image = $request->file('image')->store('public/teachers');
         }
         if($request->hasFile('identify_document')){
             $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
         }
+        $professor->subject_id = $request->input('subject_id');
         $professor->save();//Comando para registrar la info en la bd
         // return 'El docente se ha agregado exitosamente';
         return view('teachers.add_teacher');

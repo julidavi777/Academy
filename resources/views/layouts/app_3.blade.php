@@ -7,7 +7,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-info bg-info fixed-top">
-            <a class="navbar-brand text-white" href="/teachers">
+            <a class="navbar-brand text-white" href="/students">
                 <img src= {{ asset('logo_transparent.png') }} width="70" height="70" alt="">
             </a>
             <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">

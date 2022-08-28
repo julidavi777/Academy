@@ -22,7 +22,7 @@
                             </div>
                         @endforeach
                     @endif
-                        <h2 class="text-center mt-5">Agregar Nuevo Docente</h2>
+                        <h2 class="text-center mt-5">Crear Nuevo Docente</h2>
                         <br>
                         <div class="form-group">
                             <label for="name"><b>Nombre(s):</b></label>

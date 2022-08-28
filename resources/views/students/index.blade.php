@@ -28,7 +28,7 @@
                         <tr>
                             <td class="p-4">{{$student->id}}</td>
                             <td class="p-4">{{$student->names}}</td>
-                            <td class="p-4">{{$student->last_name1}} {{$student->last_name4}}</td>
+                            <td class="p-4">{{$student->last_name1}} {{$student->last_name2}}</td>
                             <td class="p-4 text-center">{{$student->gender}}</td>
                             <td class="p-4 text-center">{{$student->document_type}}</td>
                             <td class="p-4">{{$student->document_number}}</td>

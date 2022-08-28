@@ -192,9 +192,9 @@
                                 <label for="id_course" class="col-sm-6 col-form-label">Curso</label>
                                 <div class="col-sm-6">
                                     <select class="form-control" name="id_course" id="id_course">
+                                        {{-- <option>{{$courses->name}}</option> --}}
                                         {{-- <option>Seleccionar</option> --}}
                                         {{-- <option value="{{$courses->name}}">{{$courses->name}}</option> --}}
-                                        {{-- <option>{{$courses->name}}</option> --}}
                                         {{-- @foreach ( $courses as $grade)
                                             <option value="{{ $grade->id }}">{{ $grade->name }}</option>
                                         @endforeach --}}

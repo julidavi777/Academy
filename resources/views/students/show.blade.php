@@ -121,7 +121,7 @@
                             <div class="form-group row">
                                 <b>Curso matriculado: </b>
                                 <div class="col-sm-6">
-                                    <span class="">{{$courses->name}}</span>
+                                    {{-- <span class="">{{$courses->id}} {{$courses->name}}</span> --}}
                                 </div>
                             </div>
                             <br>

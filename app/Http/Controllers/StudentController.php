@@ -55,7 +55,7 @@ class StudentController extends Controller
         $apprentice->document_type = $request->input('document_type');
         $apprentice->document_number = $request->input('document_number');
         if($request->hasFile('identify_document')){
-            $apprentice->identify_document = $request->file('identify_document')->store('public/students/identify_document');
+            $apprentice->identify_document = $request->file('identify_document')->store('public/students/identify_document/');
         }
         $apprentice->id_exped_muni = $request->input('id_exped_muni');
         $apprentice->expedition_date = $request->input('expedition_date');

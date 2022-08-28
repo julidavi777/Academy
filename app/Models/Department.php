@@ -12,7 +12,7 @@ class Department extends Model
     protected $fillable = ['id', 'name', 'country_id'];
 
     public function countries(){
-        return $this->belongsTo(Country::class);
+        return $this->belongTo(Country::class);
     }
 
     public function municipalities(){

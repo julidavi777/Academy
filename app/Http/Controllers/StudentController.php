@@ -19,8 +19,13 @@ class StudentController extends Controller
      */
     public function index()
     {
+
+        $courses = Course::all();
+        $countries = Country::all();
+        $departments = Department::all();
+        $municipalities = Municipality::all();
         $apprentice = Student::all();
-        return view('students.index', compact('apprentice'));
+        return view('students.index', compact('apprentice', 'courses', 'countries', 'departments', 'municipalities'));
         // return $apprentice;
     }
 
@@ -75,8 +80,12 @@ class StudentController extends Controller
      */
     public function show($id)
     {
+        $courses = Course::find($id);
+        $countries = Country::find($id);
+        $departments = Department::find($id);
+        $municipalities = Municipality::find($id);
         $apprentice = Student::find($id);
-        return view('students.show', compact('apprentice'));
+        return view('students.show', compact('apprentice', 'courses', 'countries', 'departments', 'municipalities'));
         // return 'El id del estudiante es: ' . $id;
     }
 
@@ -88,10 +97,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $courses = Course::all();
-        $countries = Country::all();
-        $departments = Department::all();
-        $municipalities = Municipality::all();
+        $courses = Course::find($id);
+        $countries = Country::find($id);
+        $departments = Department::find($id);
+        $municipalities = Municipality::find($id);
         $apprentice = Student::find($id);
         // return 'El id del estudiante es: ' . $id;
         // return 'La información que ud quiere actualizar, se vería en formato array...' . $apprentice;
@@ -109,7 +118,7 @@ class StudentController extends Controller
     {
         $apprentice = Student::find($id);
         // return $apprentice;
-        $apprentice->fill($request->except('identify_document'));
+        $apprentice->fill($request->except('identify_document', 'exped_land', 'exped_dept', 'id_birth_country', 'id_birth_department'));
         if($request->hasFile('identify_document')){
             $apprentice->identify_document = $request->file('identify_document')->store('public/students/identify_document');
         }

@@ -194,8 +194,8 @@
                             </div>
 
                             <div class="buttons">
-                                <input type="button" class="btn btn-secondary" value="Regresar">
-                                <input type="submit" class="btn btn-success" value="Guardar">
+                                <a href="/students/" class="btn btn-secondary">Regresar</a>
+                                <button type="submit" class="btn btn-success" value="Guardar">Guardar</button>
                             </div>
                         </form>
             </div>

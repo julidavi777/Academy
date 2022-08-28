@@ -52,7 +52,6 @@
                             <label for="identify_document"><b>Cargue el documento de Identidad:</b></label>
                             <input id="identify_document" class="" type="file" name="identify_document" accept="application/pdf">
                         </div>
-                        <br>
                         <div class="form-group row">
                             <label for="subject_id" class="col-sm-6 col-form-label"><b>Curso:</b></label>
                             <div class="col-sm-6">

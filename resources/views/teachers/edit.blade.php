@@ -50,7 +50,7 @@
                         </div>
                         <br>
                         <div class="button text-center">
-                            <button class="btn btn-success" href="" type="submit">Guardar cambios</button>
+                            <button class="btn btn-success" href="" type="submit">Actualizar</button>
                         </div>
                     </form>
                 </div>

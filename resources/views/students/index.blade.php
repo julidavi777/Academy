@@ -11,39 +11,36 @@
         {{--  la doble llave sirve para interpolar, interpolar es traer una variable de otro lenguaje al lenguaje que se esta usando acutalmente --}}
 
         <div class="col-sm ">
-            <table class=" table-dark table-striped m-auto">
+            <table class=" table-dark table-striped m-auto rounded">
                 <thead>
                     <tr>
-
-                        <td class="p-2">Nombres</td>
-                        <td class="p-2">Apellidos</td>
-                        <td class="p-2">Genero</td>
-                        <td class="p-2">Tipo documento</td>
-                        <td class="p-2">N° documento</td>
-                        <td class="p-2">Municipio</td>
-                        <td class="p-2">Acciones</td>
-
-
+                        <td class="p-3 text-center"><b>N°</b></td>
+                        <td class="p-3 text-center"><b>Nombres</b></td>
+                        <td class="p-3 text-center"><b>Apellidos</b></td>
+                        <td class="p-3 text-center"><b>Género</b></td>
+                        <td class="p-3 text-center"><b>Tipo documento</b></td>
+                        <td class="p-3 text-center"><b>N° documento</b></td>
+                        <td class="p-3 text-center"><b>Acciones</b></td>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ( $apprentice as $student )
                         <tr>
-                            <td class="p-2">{{$student->names}}</td>
-                            <td class="p-2">{{$student->last_name1}} {{$student->last_name2}}</td>
-                            <td class="p-2">{{$student->gender}}</td>
-                            <td class="p-2">{{$student->document_type}}</td>
-                            <td class="p-2">{{$student->document_number}}</td>
-                            <td class="p-2">{{$student->municipalitiesBirth}}</td>
-                            <td class="p-2">
-                                <div class="row">
-                                    <div class="view mx-2 px-2">
+                            <td class="p-4">{{$student->id}}</td>
+                            <td class="p-4">{{$student->names}}</td>
+                            <td class="p-4">{{$student->last_name1}} {{$student->last_name4}}</td>
+                            <td class="p-4 text-center">{{$student->gender}}</td>
+                            <td class="p-4 text-center">{{$student->document_type}}</td>
+                            <td class="p-4">{{$student->document_number}}</td>
+                            <td class="p-3">
+                                <div class="row mt-2 pe-2">
+                                    <div class="view mx-2 px-3 mt-2">
                                         <a href="/students/{{$student->id}}" class="btn btn-primary">Ver</a>
                                     </div>
-                                    <div class="edit mx-2 px-2">
+                                    <div class="edit mx-2 px-3 mt-2">
                                         <a href="/students/{{$student->id}}/edit" class="btn btn-warning">Editar</a>
                                     </div>
-                                    <div class="supr mx-2 px-2">
+                                    <div class="supr mx-2 px-3 mt-2">
                                         <form class="form-group" action="/students/{{$student->id}}" method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -51,7 +48,7 @@
                                         </form>
                                     </div>
                                 </div>
-
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

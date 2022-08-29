@@ -37,19 +37,21 @@
                                 <div class="form-group row">
                                     <b>País de expedición: </b>
                                     <div class="col-sm-6">
-                                        <span class="">{{$countries->name}}</span>
+                                        <span class="">{{$query}}</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <b>Depto. de expedición: </b>
                                     <div class="col-sm-6">
-                                        <span class="">{{$departments->name}}</span>
+                                        {{-- <span class="">{{$departments->name}}</span> --}}
+                                        <span class="">{{$query}}</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <b>Municipio de expedición: </b>
                                     <div class="col-sm-6">
-                                        <span class="">{{$municipalities->name}}</span>
+                                        {{-- <span class="">{{$municipalities->name}}</span> --}}
+                                        <span class="">{{$query}}</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -97,19 +99,19 @@
                             <div class="form-group row">
                                 <b>País de nacimiento: </b>
                                 <div class="col-sm-6">
-                                    <span class="">{{$countries->name}}</span>
+                                    {{-- <span class="">{{$countries->name}}</span> --}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <b>Depto. de nacimiento: </b>
                                 <div class="col-sm-6">
-                                    <span class="">{{$departments->name}}</span>
+                                    {{-- <span class="">{{$departments->name}}</span> --}}
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <b>Municipio de nacimiento: </b>
                                 <div class="col-sm-6">
-                                    <span class="">{{$municipalities->name}}</span>
+                                    {{-- <span class="">{{$municipalities->name}}</span> --}}
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -121,7 +123,7 @@
                             <div class="form-group row">
                                 <b>Curso matriculado: </b>
                                 <div class="col-sm-6">
-                                    {{-- <span class="">{{$courses->id}} {{$courses->name}}</span> --}}
+                                    {{-- <span class="">{{$courses->name}}</span> --}}
                                 </div>
                             </div>
                             <br>

@@ -53,9 +53,9 @@
                             <input id="identify_document" class="" type="file" name="identify_document" accept="application/pdf">
                         </div>
                         <div class="form-group row">
-                            <label for="subject_id" class="col-sm-6 col-form-label"><b>Curso:</b></label>
+                            <label for="course_id" class="col-sm-6 col-form-label"><b>Curso:</b></label>
                             <div class="col-sm-6">
-                                <select class="form-control" name="subject_id" id="subject_id">
+                                <select class="form-control" name="course_id" id="course_id">
                                     <option>Seleccionar</option>
                                     @foreach ( $courses as $grade )
                                         <option value="{{ $grade->id }}">{{ $grade->name }}</option>

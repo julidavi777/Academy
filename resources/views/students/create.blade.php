@@ -11,7 +11,7 @@
         <br>
         <div class="text mx-5 mb-4">
             <p>Para registrarse en Drawing Academy debe ingresar información básica de identificación.
-                Tenga en cuenta que los campos marcados con * son obligatorios para continuar el registro
+                Tenga en cuenta que los campos marcados con * son obligatorios para continuar el registro.
             </p>
         </div>
         <hr>

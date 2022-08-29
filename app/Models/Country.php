@@ -9,7 +9,10 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name'];
+    protected $fillable = [
+        'id',
+        'name'
+    ];
 
     //Relación uno a muchos
     public function departments(){

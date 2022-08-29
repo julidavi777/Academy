@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\storeTeacherRequest;
 use App\Models\Course;
+use App\Models\Subject;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -59,7 +60,7 @@ class TeacherController extends Controller
         if($request->hasFile('identify_document')){
             $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
         }
-        $professor->subject_id = $request->input('subject_id');
+        $professor->course_id = $request->input('course_id');
         $professor->save();//Comando para registrar la info en la bd
         // return 'El docente se ha agregado exitosamente';
         return view('teachers.add_teacher');

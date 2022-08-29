@@ -11,7 +11,7 @@
         <br>
         <div class="text mx-5 mb-4">
             <p>Para editar la información en Drawing Academy debe ingresar información básica de identificación.
-                Tenga en cuenta que los campos marcados con * son obligatorios para continuar el registro
+                Tenga en cuenta que los campos marcados con * son obligatorios para continuar la actualización de datos.
             </p>
         </div>
         <hr>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="exped_land" class="col-sm-6 col-form-label">País de expedición *</label>
-                                    <label for="exped_land" class="col-sm-6 col-form-label">{{$countries->name}}</label>
+                                    {{-- <label for="exped_land" class="col-sm-6 col-form-label">{{$countries->name}}</label> --}}
 
                                     <div class="col-sm-6">
                                         <select class="form-control" name="exped_land" id="exped_land">
@@ -174,7 +174,7 @@
                             </div>
                             <div class="form-group row">
                                 <label for="stratum" class="col-sm-6 col-form-label">Estrato socioeconómico *</label>
-                                <label for="stratum" class="col-sm-6 col-form-label">{{$apprentice->stratum}}</label>
+                                {{-- <label for="stratum" class="col-sm-6 col-form-label">{{$apprentice->stratum}}</label> --}}
                                 <div class="col-sm-6">
                                     <select class="form-control" name="stratum" id="stratum">
                                         {{-- <option value="">{{$apprentice->stratum}}</option> --}}

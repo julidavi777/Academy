@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="bg-light text-dark rounded mt-5 pt-5 mb-5 pb-5 text-center">
-        <img src="{{ Storage::url($professor->imagen) }}" width="350" height="310" class="mb-5">
+        <img src="{{ Storage::url($professor->image) }}" width="350" height="310" class="mb-5">
         <p class="card-text"> <b>Nombre(s):</b> {{$professor->name}} </p>
         <p class="card-text"> <b>Apellido(s):</b> {{$professor->last_name}} </p>
         <p class="card-text"> <b>Titulo Universitario:</b> {{$professor->college_degree}} </p>

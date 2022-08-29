@@ -9,10 +9,14 @@ class Department extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'country_id'];
+    protected $fillable = [
+        'id',
+        'name',
+        'country_id'
+    ];
 
     public function countries(){
-        return $this->belongTo(Country::class);
+        return $this->belongsTo(Country::class);
     }
 
     public function municipalities(){

@@ -22,10 +22,10 @@ return new class extends Migration
             $table->date('contract_date');
             $table->string('image', 255);
             $table->string('identify_document', 255);
-            $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('course_id');
             $table->timestamps();//Registra el tiempo de creación de la tabla
             //A continuación se indica hacia donde apuntan estas foráneas
-            $table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');;
         });
     }
 

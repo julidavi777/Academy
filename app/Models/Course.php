@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $fillable = ['name', 'description', 'duration', 'image'];
+    protected $fillable = [
+        'name',
+        'description',
+        'duration',
+        'image'
+    ];
     use HasFactory;
 
     //Relación uno a muchos
@@ -17,6 +22,10 @@ class Course extends Model
 
     public function students(){
         return $this->hasMany(Student::class);
+    }
+
+    public function teachers(){
+        return $this->hasMany(Teacher::class);
     }
 
 }

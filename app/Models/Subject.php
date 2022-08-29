@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'name', 'hourly_intensity'];
+    protected $fillable = [
+        'id',
+        'name',
+        'hourly_intensity'
+    ];
 
     public function courses(){
         return $this->belongsTo(Course::class);

@@ -95,7 +95,7 @@
                                         <select class="form-control" id="id_exped_muni" name="id_exped_muni">
                                             <option>Seleccionar</option>
                                             @foreach ( $municipalities as $city)
-                                                <option value="">{{ $city->name }}</option>
+                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -185,7 +185,7 @@
                                     <select class="form-control" name="id_birth_muni" id="id_birth_muni">
                                         <option>Seleccionar</option>
                                         @foreach ( $municipalities as $city)
-                                            <option value="">{{ $city->name }}</option>
+                                            <option value="{{ $city->id }}">{{ $city->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -215,7 +215,7 @@
                                     <select class="form-control" name="id_course" id="id_course">
                                         <option>Seleccionar</option>
                                         @foreach ( $courses as $grade)
-                                            <option value="">{{ $grade->name }}</option>
+                                            <option value="{{ $grade->id }}">{{ $grade->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

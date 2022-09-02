@@ -198,6 +198,7 @@ class StudentController extends Controller
         }
         $apprentice->save();
         return view('students.edit_student');
+        // return $request;
     }
 
     /**

@@ -9,7 +9,6 @@ class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id',
         'document_type',
         'document_number',
         'identify_document',
@@ -20,9 +19,9 @@ class Student extends Model
         'last_name2',
         'gender',
         'birth_date',
+        'id_birth_muni',
         'stratum',
-        'id_course',
-        'id_birth_muni'
+        'id_course'
     ];
 
     public function municipalities(){

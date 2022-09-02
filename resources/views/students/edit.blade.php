@@ -53,38 +53,50 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="exped_land" class="col-sm-6 col-form-label">País de expedición *</label>
-                                    {{-- <label for="exped_land" class="col-sm-6 col-form-label">{{$countries->name}}</label> --}}
+                                    @foreach ( $query as $consult )
+                                        <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult->nameCountry}}</label>
+                                    @endforeach
 
                                     <div class="col-sm-6">
                                         <select class="form-control" name="exped_land" id="exped_land">
                                             {{-- <option>Seleccionar</option> --}}
-                                            {{-- @foreach ( $countries as $land )
+                                            {{-- @foreach ( $query as $consult ) --}}
+                                                {{-- <option value=""></option> --}}
+                                                {{-- <p>{{ $consult->nameCountry}}</p> --}}
+                                            {{-- @endforeach --}}
+                                            <option>Seleccionar</option>
+                                            @foreach ( $countries as $land)
                                                 <option value="">{{ $land->name }}</option>
-                                            @endforeach --}}
+                                            @endforeach
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="exped_dept" class="col-sm-6 col-form-label">Depto. donde fue expedido *</label>
+                                    @foreach ( $query as $consult )
+                                        <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult->nameDepart}}</label>
+                                    @endforeach
                                     <div class="col-sm-6">
                                         <select class="form-control" id="exped_dept" name="exped_dept">
-                                            {{-- <option>Seleccionar</option> --}}
-                                            {{-- <option>{{$departments->name}}</option> --}}
-                                            {{-- @foreach ( $departments as $dept )
+                                            <option>Seleccionar</option>
+                                            @foreach ( $departments as $dept)
                                                 <option value="">{{ $dept->name }}</option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="id_exped_muni" class="col-sm-6 col-form-label">Municipio donde fue expedido *</label>
+                                    @foreach ( $query as $consult )
+                                        <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult->nameMuni}}</label>
+                                    @endforeach
                                     <div class="col-sm-6">
                                         <select class="form-control" id="id_exped_muni" name="id_exped_muni">
-                                            {{-- <option>Seleccionar</option> --}}
-                                            {{-- <option>{{$municipalities->name}}</option> --}}
-                                            {{-- @foreach ( $municipalities as $city)
-                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
-                                            @endforeach --}}
+                                            <option>Seleccionar</option>
+                                            @foreach ( $municipalities as $city)
+                                                <option value="">{{ $city->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -138,37 +150,43 @@
                             </div>
                             <div class="form-group row">
                                 <label for="id_birth_country" class="col-sm-6 col-form-label">País de nacimiento *</label>
+                                @foreach ( $query2 as $consult2 )
+                                    <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult2->birthCountry}}</label>
+                                @endforeach
                                 <div class="col-sm-6">
                                     <select class="form-control" name="id_birth_country" id="id_birth_country">
-                                        {{-- <option>Seleccionar</option> --}}
-                                        {{-- <option>{{$countries->name}}</option> --}}
-                                        {{-- @foreach ( $countries as $land )
+                                        <option>Seleccionar</option>
+                                        @foreach ( $countries as $land)
                                             <option value="">{{ $land->name }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="id_birth_department" class="col-sm-6 col-form-label">Departamento de nacimiento *</label>
+                                @foreach ( $query2 as $consult2 )
+                                    <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult2->birthDepart}}</label>
+                                @endforeach
                                 <div class="col-sm-6">
                                     <select class="form-control" name="id_birth_department" id="id_birth_department">
-                                        {{-- <option>Seleccionar</option> --}}
-                                        {{-- <option>{{$departments->name}}</option> --}}
-                                        {{-- @foreach ( $departments as $dept )
+                                        <option>Seleccionar</option>
+                                        @foreach ( $departments as $dept)
                                             <option value="">{{ $dept->name }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="id_birth_muni" class="col-sm-6 col-form-label">Municipio de nacimiento *</label>
+                                @foreach ( $query2 as $consult2 )
+                                    <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult2->birthMuni}}</label>
+                                @endforeach
                                 <div class="col-sm-6">
                                     <select class="form-control" name="id_birth_muni" id="id_birth_muni">
-                                        {{-- <option>Seleccionar</option> --}}
-                                        {{-- <option>{{$municipalities->name}}</option> --}}
-                                        {{-- @foreach ( $municipalities as $city )
-                                            <option value="{{ $city->id }}">{{ $city->name }}</option>
-                                        @endforeach --}}
+                                        <option>Seleccionar</option>
+                                        @foreach ( $municipalities as $city)
+                                            <option value="">{{ $city->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -177,7 +195,7 @@
                                 {{-- <label for="stratum" class="col-sm-6 col-form-label">{{$apprentice->stratum}}</label> --}}
                                 <div class="col-sm-6">
                                     <select class="form-control" name="stratum" id="stratum">
-                                        {{-- <option value="">{{$apprentice->stratum}}</option> --}}
+                                        <option value="">{{$apprentice->stratum}}</option>
                                         <option value="">Seleccionar</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -190,14 +208,15 @@
                             </div>
                             <div class="form-group row">
                                 <label for="id_course" class="col-sm-6 col-form-label">Curso</label>
+                                @foreach ( $query3 as $consult3 )
+                                    <label for="exped_land" class="col-sm-6 col-form-label">{{ $consult3->name}}</label>
+                                @endforeach
                                 <div class="col-sm-6">
                                     <select class="form-control" name="id_course" id="id_course">
-                                        {{-- <option>{{$courses->name}}</option> --}}
-                                        {{-- <option>Seleccionar</option> --}}
-                                        {{-- <option value="{{$courses->name}}">{{$courses->name}}</option> --}}
-                                        {{-- @foreach ( $courses as $grade)
-                                            <option value="{{ $grade->id }}">{{ $grade->name }}</option>
-                                        @endforeach --}}
+                                        <option>Seleccionar</option>
+                                        @foreach ( $courses as $grade)
+                                            <option value="">{{ $grade->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

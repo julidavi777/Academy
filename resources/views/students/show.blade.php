@@ -12,124 +12,52 @@
 
         <hr>
         <div class="row">
-                <div class="col-sm-5 mx-5 pb-3 rounded">
-                            <h5>Documento de identidad</h5>
+            <div class="col-sm-5 mx-5 pb-3 rounded">
+                <h5>Documento de identidad</h5>
+                <br>
+                <div class="form-group row">
+                    @foreach ( $query as $consult )
+                        <div class="form-group ">
+                        <p><b>Tipo de documento: </b>{{$apprentice->document_type}}</p>
+                        <p><b>No. de documento </b>{{$apprentice->document_number}}</p>
+                        <p><b>Documento pdf:</b>
                             <br>
-
-                                <div class="form-group row">
-                                    <b> Tipo de documento:</b>
-                                    <div class="col-sm-6">
-                                        <span>{{$apprentice->document_type}}</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <b>No. de documento </b>
-                                    <div class="col-sm-6">
-                                        <span class="">{{$apprentice->document_number}}</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <b>Documento pdf:</b>
-                                    <div class="col-sm-6">
-                                        <iframe src="{{ Storage::url($apprentice->identify_document) }}" width="100" height="100"></iframe>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <b>País de expedición: </b>
-                                    <div class="col-sm-6">
-                                        <span class="">{{$query}}</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <b>Depto. de expedición: </b>
-                                    <div class="col-sm-6">
-                                        {{-- <span class="">{{$departments->name}}</span> --}}
-                                        <span class="">{{$query}}</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <b>Municipio de expedición: </b>
-                                    <div class="col-sm-6">
-                                        {{-- <span class="">{{$municipalities->name}}</span> --}}
-                                        <span class="">{{$query}}</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <b>Fecha de expedición: </b>
-                                    <div class="col-sm-6">
-                                        <span class="">{{$apprentice->expedition_date}}</span>
-                                    </div>
-                                </div>
+                            <iframe src="{{ Storage::url($apprentice->identify_document) }}" width="100" height="100"></iframe></p>
+                        <p><b>País de expedición: </b>{{$consult->nameCountry}}</p>
+                        <p><b>Depto. de expedición: </b>{{$consult->nameDepart}}</p>
+                        <p><b>Municipio de expedición: </b>{{$consult->nameMuni}}</p>
+                        <p><b>Fecha de expedición: </b>{{$apprentice->expedition_date}}</p>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="col-sm ms-5 me-5 pb-3 rounded">
+            </div>
+            <div class="col-sm ms-5 me-5 pb-3 rounded">
+            </div>
+            <div class="col-sm-4 mx-5 px-1 pb-3 rounded">
+                <h5>Datos de identificación</h5>
+                <br>
+                <div class="form-group row">
+                    @foreach ( $query2 as $consult2 )
+                        <div class="form-group ">
+                            <p><b>Nombres: </b>{{$apprentice->names}}</p>
+                            <p><b>Primer apellido: </b>{{$apprentice->last_name1}}</p>
+                            <p><b>Segundo apellido: </b>{{$apprentice->last_name2}}</p>
+                            <p><b>Género: </b>{{$apprentice->gender}}</p>
+                            <p><b>Fecha de nacimiento: </b>{{$apprentice->birth_date}}</p>
+                            <p><b>País de nacimiento: </b>{{$consult2->birthCountry}}</p>
+                            <p><b>Depto. de nacimiento: </b>{{$consult2->birthDepart}}</p>
+                            <p><b>Municipio de nacimiento: </b>{{$consult2->birthMuni}}</p>
+                            <p><b>Estrato socioeconómico: </b>{{$apprentice->stratum}}</p>
+                            @foreach ( $query3 as $consult3 )
+                                <p><b>Curso matriculado: </b>{{$consult3->name}}</p>
+                            @endforeach
+                        </div>
+                    @endforeach
                 </div>
-                <div class="col-sm-4 mx-5 px-1 pb-3 rounded">
-                        <h5>Datos de identificación</h5>
-                        <br>
-                            <div class="form-group row">
-                                <b>Nombres: </b>
-                                <div class="col-sm-6">
-                                    <span class="">{{$apprentice->names}}</span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Primer apellido: </b>
-                                <div class="col-sm-6">
-                                    <span class="">{{$apprentice->last_name1}}</span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Segundo apellido: </b>
-                                <div class="col-sm-6">
-                                    <span class="">{{$apprentice->last_name2}}</span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Género: </b>
-                                <div class="col-sm-6">
-                                    <span class="">{{$apprentice->gender}}</span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Fecha de nacimiento: </b>
-                                <div class="col-sm-6">
-                                    <span class="">{{$apprentice->birth_date}}</span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>País de nacimiento: </b>
-                                <div class="col-sm-6">
-                                    {{-- <span class="">{{$countries->name}}</span> --}}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Depto. de nacimiento: </b>
-                                <div class="col-sm-6">
-                                    {{-- <span class="">{{$departments->name}}</span> --}}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Municipio de nacimiento: </b>
-                                <div class="col-sm-6">
-                                    {{-- <span class="">{{$municipalities->name}}</span> --}}
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Estrato socioeconómico: </b>
-                                <div class="col-sm-6">
-                                    <span class="">{{$apprentice->stratum}}</span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <b>Curso matriculado: </b>
-                                <div class="col-sm-6">
-                                    {{-- <span class="">{{$courses->name}}</span> --}}
-                                </div>
-                            </div>
-                            <br>
-                            <div class="button mb-3">
-                                <a href="/students/" class="btn btn-secondary">Regresar</a>
-                            </div>
+                <br>
+                <div class="button mb-3">
+                    <a href="/students/" class="btn btn-secondary">Regresar</a>
+                </div>
             </div>
         </div>
     </div>

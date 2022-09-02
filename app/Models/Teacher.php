@@ -24,7 +24,4 @@ class Teacher extends Model
         return $this->belongsTo(Subject::class);
     }
 
-    public function courses(){
-        return $this->belongsTo(Course::class);
-    }
 }

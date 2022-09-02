@@ -8,7 +8,9 @@ use App\Models\Course;
 use App\Models\Department;
 use App\Models\Municipality;
 use App\Models\Student;
+use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Http\Request;
+use Illuminate\database\Eloquent;
 
 class StudentController extends Controller
 {
@@ -94,11 +96,36 @@ class StudentController extends Controller
         ->select('municipalities.name as nameMuni', 'departments.name as nameDepart', 'countries.name as nameCountry')
         ->get();
 
-        // return $apprentice;
-        // return $query;
+        $query2 = Municipality::join(
+            'students', 'students.id_birth_muni', 'municipalities.id'
+        )
+        ->join(
+            'departments', 'departments.id', 'municipalities.department_id'
+        )
+        ->join(
+            'countries', 'countries.id', 'departments.country_id'
+        )
+        ->where('students.id', $id)
+        ->select('municipalities.name as birthMuni', 'departments.name as birthDepart', 'countries.name as birthCountry')
+        ->get();
 
-        return view('students.show', compact('apprentice', 'query'));
+        $query3 = Course::join(
+            'students', 'students.id_course', 'courses.id'
+        )
+        ->where('students.id', $id)
+        ->select('courses.name as name')
+        ->get();
+
+
+        return view('students.show', compact('apprentice', 'query', 'query2', 'query3') );
         // return 'El id del estudiante es: ' . $id;
+
+        // return $query;
+        // $newQuery = json_decode($query, true);
+        // $response = json_decode($query->text()) ;
+        // return  $response;
+
+
     }
 
     /**
@@ -110,9 +137,48 @@ class StudentController extends Controller
     public function edit($id)
     {
         $apprentice = Student::find($id);
+        $courses = Course::all();
+        $countries = Country::all();
+        $departments = Department::all();
+        $municipalities = Municipality::all();
+
+        $query = Municipality::join(
+            'students', 'students.id_exped_muni', 'municipalities.id'
+        )
+        ->join(
+            'departments', 'departments.id', 'municipalities.department_id'
+        )
+        ->join(
+            'countries', 'countries.id', 'departments.country_id'
+        )
+        ->where('students.id', $id)
+        ->select('municipalities.name as nameMuni', 'departments.name as nameDepart', 'countries.name as nameCountry')
+        ->get();
+
+        $query2 = Municipality::join(
+            'students', 'students.id_birth_muni', 'municipalities.id'
+        )
+        ->join(
+            'departments', 'departments.id', 'municipalities.department_id'
+        )
+        ->join(
+            'countries', 'countries.id', 'departments.country_id'
+        )
+        ->where('students.id', $id)
+        ->select('municipalities.name as birthMuni', 'departments.name as birthDepart', 'countries.name as birthCountry')
+        ->get();
+
+        $query3 = Course::join(
+            'students', 'students.id_course', 'courses.id'
+        )
+        ->where('students.id', $id)
+        ->select('courses.name as name')
+        ->get();
+
+        return view('students.edit', compact('apprentice', 'query', 'query2', 'query3', 'courses', 'countries', 'departments', 'municipalities'));
+
         // return 'El id del estudiante es: ' . $id;
         // return 'La información que ud quiere actualizar, se vería en formato array...' . $apprentice;
-        return view('students.edit', compact('apprentice'));
     }
 
     /**

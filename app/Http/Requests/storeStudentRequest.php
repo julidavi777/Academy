@@ -27,7 +27,7 @@ class storeStudentRequest extends FormRequest
             'document_number' => 'required|integer',
             'identify_document' => 'required|mimes:pdf',
             'expedition_date' => 'required:nullable|date',
-            'names' => 'required|max:45',
+            'names' => 'required:string|max:45',
             'last_name1' => 'required:string|max:45',
             'birth_date' => 'required:nullable|date',
         ];

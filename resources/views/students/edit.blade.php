@@ -59,11 +59,6 @@
 
                                     <div class="col-sm-6">
                                         <select class="form-control" name="exped_land" id="exped_land">
-                                            {{-- <option>Seleccionar</option> --}}
-                                            {{-- @foreach ( $query as $consult ) --}}
-                                                {{-- <option value=""></option> --}}
-                                                {{-- <p>{{ $consult->nameCountry}}</p> --}}
-                                            {{-- @endforeach --}}
                                             <option>Seleccionar</option>
                                             @foreach ( $countries as $land)
                                                 <option value="">{{ $land->name }}</option>

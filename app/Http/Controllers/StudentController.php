@@ -69,6 +69,9 @@ class StudentController extends Controller
         $apprentice->id_birth_muni = $request->input('id_birth_muni');
         $apprentice->stratum = $request->input('stratum');
         $apprentice->id_course = $request->input('id_course');
+
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
+
         $apprentice->save();
         return view('students.add_student');
         // return $request;
@@ -196,6 +199,9 @@ class StudentController extends Controller
         if($request->hasFile('identify_document')){
             $apprentice->identify_document = $request->file('identify_document')->store('public/students/identify_document');
         }
+
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
+
         $apprentice->save();
         return view('students.edit_student');
         // return $request;

@@ -12,6 +12,7 @@ class Course extends Model
         'description',
         'duration',
         'image'
+        //Añada aquí el nombre de las nuevas columnas que haya creado
     ];
     use HasFactory;
 

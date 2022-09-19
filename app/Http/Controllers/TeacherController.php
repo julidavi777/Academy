@@ -61,6 +61,9 @@ class TeacherController extends Controller
             $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
         }
         $professor->course_id = $request->input('course_id');
+
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
+
         $professor->save();//Comando para registrar la info en la bd
         // return 'El docente se ha agregado exitosamente';
         return view('teachers.add_teacher');
@@ -111,6 +114,9 @@ class TeacherController extends Controller
         if($request->hasFile('identify_document')){
             $professor->identify_document = $request->file('identify_document')->store('public/identify_document');
         }
+
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
+
         $professor->save();
         // return $request;
         // return 'La información del docente se ha actualizado exitosamente';

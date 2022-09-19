@@ -12,6 +12,8 @@ class Country extends Model
     protected $fillable = [
         'id',
         'name'
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
+
     ];
 
     //Relación uno a muchos

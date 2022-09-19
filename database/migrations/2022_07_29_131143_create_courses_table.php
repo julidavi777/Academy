@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();//Llave primaria
-            $table->timestamps();//Registra el tiempo de creación de la tabla
             $table->string('name');
             $table->string('description');
             $table->integer('duration');
+            $table->timestamps();//Registra el tiempo de creación de la tabla
         });
     }
 

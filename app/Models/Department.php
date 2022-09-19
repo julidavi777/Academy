@@ -13,6 +13,7 @@ class Department extends Model
         'id',
         'name',
         'country_id'
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
     ];
 
     public function countries(){

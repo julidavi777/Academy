@@ -12,6 +12,7 @@ class Subject extends Model
         'id',
         'name',
         'hourly_intensity'
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
     ];
 
     public function courses(){

@@ -61,6 +61,8 @@ class CourseController extends Controller
         if($request->hasFile('image')){
             $grade->image = $request->file('image')->store('public/courses');
         }
+        //Añada aquí el nombre de las nuevas columnas que haya creado
+
         $grade->save();//Comando para registrar la info en la bd
         // return 'El curso se ha guardado exitosamente';
         // return $grade->description;
@@ -111,6 +113,9 @@ class CourseController extends Controller
         if($request->hasFile('image')){
             $grade->image = $request->file('image')->store('public/courses');
         }
+
+        //Añada aquí el nombre de las nuevas columnas que haya creado
+
         $grade->save();
         // return $request;
         // return 'La información del curso se ha actualizado exitosamente';

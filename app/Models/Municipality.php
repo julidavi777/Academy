@@ -12,6 +12,7 @@ class Municipality extends Model
         'id',
         'name',
         'department_id'
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
     ];
 
     //Relación uno a muchos

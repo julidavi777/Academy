@@ -22,6 +22,7 @@ class Student extends Model
         'id_birth_muni',
         'stratum',
         'id_course'
+        //Añada aquí el nombre de la nueva columna que haya creado para mejorar el módulo
     ];
 
     public function municipalities(){

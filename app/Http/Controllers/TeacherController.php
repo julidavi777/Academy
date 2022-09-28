@@ -18,7 +18,7 @@ class TeacherController extends Controller
     public function index()
     {
         $professor = Teacher::all() ;//Traemos toda la info de la tabla teachers a trabes del modelo y el método all()
-        return view('teachers.index', compact('professor'));//Se adjunta teacher a la vista para poderlo usar, usando compact
+        //return view('teachers.index', compact('professor'));//Se adjunta teacher a la vista para poderlo usar, usando compact
         // return $professor;
         // return view('teachers.index');
     }

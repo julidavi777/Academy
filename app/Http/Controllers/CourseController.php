@@ -37,23 +37,23 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(storeCourseRequest $request)
     {
 
-        // $grade = new Course();//Crear una instancia de la clase Curso
-        // $grade->name = $request->input('name');
-        // $grade->description = $request->input('description');
-        // $grade->duration = $request->input('duration');
-        // if($request->hasFile('image')){
-        //     $grade->image = $request->file('image')->store('public/courses');
-        // }
-        // //Añada aquí el nombre de las nuevas columnas que haya creado
+        $grade = new Course();//Crear una instancia de la clase Curso
+        $grade->name = $request->input('name');
+        $grade->description = $request->input('description');
+        $grade->duration = $request->input('duration');
+        if($request->hasFile('image')){
+            $grade->image = $request->file('image')->store('public/courses');
+        }
+        //Añada aquí el nombre de las nuevas columnas que haya creado
 
-        // $grade->save();//Comando para registrar la info en la bd
-        // return view('courses.add_course');
+        $grade->save();//Comando para registrar la info en la bd
+        return view('courses.add_course');
 
-        $grade = Course::create($request->all());
-        return response()->json($grade, 201);
+        // $grade = Course::create($request->all());
+        // return response()->json($grade, 201);
     }
 
     /**

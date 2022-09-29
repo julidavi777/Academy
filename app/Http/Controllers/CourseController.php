@@ -37,38 +37,23 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(storeCourseRequest $request)
+    public function store(Request $request)
     {
 
-        //Implementando las validaciones
-        // $dataValidation = $request->validate([
-        //     'name' => 'required|max:15',
-        //     'description' => 'required|max:60',
-        //     'duration' => 'required|size:3',
-        //     'imagen' => 'required|image'
-        // ]);
+        // $grade = new Course();//Crear una instancia de la clase Curso
+        // $grade->name = $request->input('name');
+        // $grade->description = $request->input('description');
+        // $grade->duration = $request->input('duration');
+        // if($request->hasFile('image')){
+        //     $grade->image = $request->file('image')->store('public/courses');
+        // }
+        // //Añada aquí el nombre de las nuevas columnas que haya creado
 
-        if($request->hasFile('image')){
-            $file = $request->file('image');
-        }
+        // $grade->save();//Comando para registrar la info en la bd
+        // return view('courses.add_course');
 
-        //Se devuelve la petición hecha al servidor
-        // return $request->all();
-        $grade = new Course();//Crear una instancia de la clase Curso
-        $grade->name = $request->input('name');
-        $grade->description = $request->input('description');
-        $grade->duration = $request->input('duration');
-        if($request->hasFile('image')){
-            $grade->image = $request->file('image')->store('public/courses');
-        }
-        //Añada aquí el nombre de las nuevas columnas que haya creado
-
-        $grade->save();//Comando para registrar la info en la bd
-        // return 'El curso se ha guardado exitosamente';
-        // return $grade->description;
-        // return $grade;
-        // return $request->input('name');
-        return view('courses.add_course');
+        $grade = Course::create($request->all());
+        return response()->json($grade, 201);
     }
 
     /**
